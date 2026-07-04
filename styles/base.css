@@ -1,0 +1,196 @@
+:root{
+--ink-black: #03071eff;
+--night-bordeaux: #370617ff;
+--black-cherry: #6a040fff;
+--oxblood: #9d0208ff;
+--brick-ember: #d00000ff;
+--red-ochre: #dc2f02ff;
+--cayenne-red: #e85d04ff;
+--deep-saffron: #f48c06ff;
+--orange: #faa307ff;
+--amber-flame: #ffba08ff;
+--heading:"Archivo Black","lato", "google sans", sans-serif;
+--head:"Archivo Black";
+--primary-color: #1e3a8a;
+--completed-bg: #d1fae5;
+--completed-border: #10b981;
+--completed-text: #065f46;
+--incomplete-bg: #f3f4f6;
+--incomplete-border: #9ca3af;
+--incomplete-text: #1f2937;
+}
+header{
+    background-color: var(--ink-black);
+    color: #ffffff;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-color: var(--ink-black);
+    font-family: var(--head);
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--night-bordeaux);
+}
+
+.active{
+    background-color: #111c5c;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Estira el enlace en móvil para facilitar el toque */
+}
+
+header img{
+    width: 100px;
+}
+header span{
+    font-family: var(--head);
+    font-size: xx-large;
+}
+#headername {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+#hambutton {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: var(--head);
+    padding: 0.5rem;
+}
+#hambutton::before {
+    content: "☰";
+}
+
+#hambutton.open::before {
+    content: "✕";
+}
+nav {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+nav.show {
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    margin: 1rem;
+    background-color: #cfcbcb;
+    grid-template-rows: repeat(auto-fit, minmax(200px 1fr));
+    font-family: var(--heading);
+}
+h2{
+    color: white;
+    background-color: var(--ink-black);
+    text-align: center;
+}
+.pfp div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+ margin: 1rem;
+}
+.pfp img{
+    margin: auto;
+    width: 200px;
+}
+.footermedia{
+    display: flex;
+    justify-content: center;
+}
+.footermedia img{
+    width: 50px;
+    text-align: center;
+}
+.footercover{
+    background-color: var(--night-bordeaux);
+    color: white;
+    text-align: center;
+    font-family: var(--heading);
+}
+.filters {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.fbut{
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+}
+.fbut.active, .fbut:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+.course-grid {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.course-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border-left: 8px solid var(--incomplete-border);
+    background-color: var(--incomplete-bg);
+    color: var(--incomplete-text);
+}
+.course-card.completed {
+    background-color: var(--completed-bg);
+    border-left-color: var(--completed-border);
+    color: var(--completed-text);
+}
+.course-card h3 {
+    margin: 0 0 0.5rem 0;
+}
+
+.course-tech {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.credit-total {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: right;
+    padding: 1rem;
+    border-top: 2px solid #e5e7eb;
+}

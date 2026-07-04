@@ -1,0 +1,48 @@
+@media (min-width: 700px) {
+    #hambutton {
+        display: none;
+    }
+
+    header{
+        display: grid;
+        grid-template-rows: auto;
+    }
+
+    nav {
+        display: flex;
+        position: static;
+        width: auto;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        gap: 15px;
+    }
+
+    li {
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+    }
+
+    a {
+        display: inline;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2rem 18rem 1fr;
+        gap: 5px;
+    }
+
+    h1 {
+        grid-column: span 2;
+    }
+
+    .manystuff {
+        grid-column: span 2;
+    }
+}

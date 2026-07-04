@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="Main page task">
+    <meta name="author" content="Franco Sanchez">
+    <script src="scripts/getdates.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/base-large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:wght@400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/courses.js" defer></script>
+    <script src="scripts/nav.js" defer></script>
+</head>
+<body>
+    <header>
+        <section id="headername">
+            <img src="images/souly_logo.webp" alt="souly logo">
+            <span>Franco Sanchez Site</span>
+            <button type="button" id="hambutton"></button>
+        </section>
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Chamber Project</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Home</h1>
+        <Section class="biobio">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odio maxime facere, officia, quia soluta officiis, aut dolor optio eaque aperiam facilis velit praesentium quam tempore. Deserunt cupiditate eligendi eius beatae quo provident vel sapiente autem impedit, explicabo laborum cum!</p>
+        </Section>
+        <section class="pfp">
+            <h2>Student photo</h2>
+            <div><img src="images/profile.webp" alt="Student Photo"></div>
+            
+        </section>
+        <section class="manystuff">
+            <h2>Web Certificate Courses</h2>
+            <div class="filters">
+            <button type="button" class="fbut" id="ac">All Courses</button>
+            <button type="button" class="fbut" id="wdd">WDD Courses</button>
+            <button type="button" class="fbut" id="cse">CSE Courses</button>
+            </div>
+            <div id="course-container" class="course-grid"></div>
+            <div class="credit-total">
+                Total Credits Displayed: <span id="total-credits">0</span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footermedia">
+            <a href="github.com"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="X.com"><img src="images/X.svg" alt="X"></a>
+            <a href="linkedin.com"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </section>
+        <section class="footercover">
+            <p>©<span id="currentyear"></span> Franco Sanchez - Argentina</p>
+            <p id="lastModified"></p>
+        </section>
+        
+    </footer>
+</body>
+</html>

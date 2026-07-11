@@ -66,10 +66,6 @@ header{
     border-radius: 5px;
 }
 
-.active{
-    background-color: var(--secondary);
-}
-
 a {
     color: var(--text);
     text-decoration: none;
@@ -83,6 +79,10 @@ a:hover{
     color: var(--text);
     background-color: var(--secondary);
     padding: 1rem;
+}
+
+.active{
+    background-color: var(--background);
 }
 
 ul {

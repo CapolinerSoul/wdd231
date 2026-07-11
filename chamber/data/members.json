@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Boutique Palmares",
+    "address": "Av. San Martín Sur 2875, Godoy Cruz",
+    "phone": "+54 261 439-1000",
+    "website": "https://boutiquepalmares.com.ar",
+    "image": "boutique.jpg",
+    "membership_level": 3,
+    "category": "Indumentaria y Moda",
+    "founded": 2018
+  },
+  {
+    "name": "Bodega Escorihuela Gascón",
+    "address": "Belgrano 1188, Godoy Cruz",
+    "phone": "+54 261 424-2282",
+    "website": "https://escorihuelagascon.com.ar",
+    "image": "escorihuela_gascon.png",
+    "membership_level": 3,
+    "category": "Vitivinicultura y Turismo",
+    "founded": 1884
+  },
+  {
+    "name": "TecnoGC Soluciones",
+    "address": "Colón 450, Godoy Cruz",
+    "phone": "+54 261 422-5500",
+    "website": "https://tecnogc.com.ar",
+    "image": "tecno_gc.jpg",
+    "membership_level": 2,
+    "category": "Tecnología y Soporte IT",
+    "founded": 2015
+  },
+  {
+    "name": "Café de la Plaza",
+    "address": "Rivadavia 82, Godoy Cruz",
+    "phone": "+54 261 420-1122",
+    "website": "https://cafedelaplaza.com.ar",
+    "image": "cafe_plaza.jpg",
+    "membership_level": 1,
+    "category": "Gastronomía",
+    "founded": 2021
+  },
+  {
+    "name": "Logística Cuyo S.A.",
+    "address": "Carril Rodríguez Peña 2300, Godoy Cruz",
+    "phone": "+54 261 496-3300",
+    "website": "https://logisticacuyo.com.ar",
+    "image": "logistica_cuyo.jpg",
+    "membership_level": 3,
+    "category": "Transporte y Logística",
+    "founded": 2005
+  },
+  {
+    "name": "EcoHuerto Godoy Cruz",
+    "address": "Paso de los Andes 1240, Godoy Cruz",
+    "phone": "+54 261 428-9988",
+    "website": "https://ecohuertogc.com.ar",
+    "image": "ecohuerto.jpg",
+    "membership_level": 1,
+    "category": "Vivero y Sustentabilidad",
+    "founded": 2023
+  },
+  {
+    "name": "Estudio Contable Godoy & Asociados",
+    "address": "Perito Moreno 320, Godoy Cruz",
+    "phone": "+54 261 424-7744",
+    "website": "https://estudiogodoy.com.ar",
+    "image": "godoy.png",
+    "membership_level": 2,
+    "category": "Servicios Profesionales",
+    "founded": 2010
+  }
+]

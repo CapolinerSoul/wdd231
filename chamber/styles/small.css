@@ -1,0 +1,366 @@
+:root {
+    --font-main: 'Roboto', sans-serif;
+
+    /* Modo Claro (Por defecto) */
+    --primary: #0066CC;
+    --secondary: #10B981;
+    --background: #F8FAFC;
+    --surface: #FFFFFF; /* Para tarjetas o contenedores */
+    --text: #0F172A;
+    --text-muted: #64748B; /* Para textos secundarios */
+}
+
+:root.darkmode {
+    /* Modo Oscuro */
+    --primary: #3B82F6;
+    --secondary: #34D399;
+    --background: #0F172A; 
+    --surface: #1E293B;
+    --text: #F8FAFC;
+    --text-muted: #94A3B8;
+}
+
+
+header img{
+    width: 24px;
+    height: 24px;
+}
+
+#dark {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+/* Efecto hover utilizando el color de fondo dinámico */
+#dark:hover {
+    background-color: var(--background);
+}
+
+/* Inversión automática del icono SVG si es de color negro original */
+.darkmode #dark img, .darkmode .mainheader img, .darkmode .socialmediafooter a img {
+    filter: invert(1) brightness(2);
+}
+
+header span{
+    font-family: var(--font-main);
+    font-size: x-large;
+    margin: 0.5rem;
+}
+
+header{
+    background-color: var(--primary);
+    color: var(--text);
+    margin: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    border-radius: 5px;
+}
+
+.active{
+    background-color: var(--secondary);
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+a:hover{
+    color: var(--text);
+    background-color: var(--secondary);
+    padding: 1rem;
+}
+
+ul {
+    background-color: var(--primary);
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--text);
+}
+
+#hambutton {
+    width: 24px;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: var(--head);
+    padding: 0.5rem;
+}
+#hambutton::before {
+    content: "☰";
+}
+
+#hambutton.open::before {
+    content: "✕";
+}
+nav {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+nav.show {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+    margin-left: 2rem;
+}
+
+.directory-controls {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.directory-controls button {
+  font-family: var(--font-main);
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid var(--primary);
+  background-color: var(--surface);
+  color: var(--primary);
+  border-radius: 6px;
+  margin: 0 6px;
+  transition: all 0.2s ease;
+}
+
+.directory-controls button:hover {
+  background-color: var(--primary);
+  color: var(--surface);
+}
+
+.directory-controls button.active {
+  background-color: var(--primary);
+  color: var(--surface);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Enlaces globales dentro de las tarjetas */
+.member-card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.member-card a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-view .member-card {
+  background-color: var(--surface);
+  border: 1px solid var(--text-muted);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
+}
+
+.grid-view .member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.grid-view .member-card img {
+  max-width: 130px;
+  height: auto;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #ffffff; /* Fondo blanco interno para logos transparentes */
+  padding: 6px;
+}
+
+.grid-view .member-card h3 {
+  margin: 12px 0 6px 0;
+  font-size: 1.3rem;
+}
+
+.grid-view .member-card .category {
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.grid-view .member-card .address,
+.grid-view .member-card .phone {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 4px 0;
+}
+
+.grid-view .member-card .description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 16px 0;
+  flex-grow: 1; /* Empuja el badge y el link al fondo uniformemente */
+}
+
+
+.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.list-view .member-card {
+  background-color: var(--surface);
+  border-left: 10px solid var(--primary);
+  border-top: 1px solid var(--text-muted);
+  border-right: 1px solid var(--text-muted);
+  border-bottom: 1px solid var(--text-muted);
+  border-radius: 6px;
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.list-view .member-card:has(.level-2) { border-left-color: #bdc3c7; }
+.list-view .member-card:has(.level-3) { border-left-color: #f1c40f; }
+
+.list-view .member-card img {
+  display: none; /* Oculto en lista para simplificar espacio */
+}
+
+.list-view .member-card h3 {
+  margin: 0;
+  flex: 1 1 200px;
+  font-size: 1.15rem;
+}
+
+.list-view .member-card .category {
+  color: var(--secondary);
+  font-weight: 600;
+  flex: 1 1 150px;
+}
+
+.list-view .member-card .address {
+  color: var(--text-muted);
+  flex: 1 1 200px;
+}
+
+.list-view .member-card .phone {
+  color: var(--text-muted);
+  flex: 1 1 120px;
+}
+
+.list-view .member-card .description {
+  display: none; /* Se oculta la descripción larga en vista de lista compacta */
+}
+
+/* ==========================================
+   BADGES DE MEMBRESÍA (Alineación con Paleta)
+   ========================================== */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+/* Bronce / Estándar */
+.level-1 {
+  background-color: var(--text-muted);
+  color: var(--surface);
+}
+
+/* Plata (Silver) */
+.level-2 {
+  background-color: #bdc3c7;
+  color: #1e293b;
+}
+
+/* Oro (Gold) */
+.level-3 {
+  background-color: #f1c40f;
+  color: #1e293b;
+}
+
+/* Mensaje de Error */
+.error {
+  color: #ef4444;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+}
+
+footer{
+   display: flex;
+    background-color: var(--primary);
+    color: var(--text);
+    flex-direction: column;
+    gap: 40px;   
+    justify-content: center;
+    align-items: center;
+}
+
+.socialmediafooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.socialmediafooter a img{
+    width: 50px;
+}

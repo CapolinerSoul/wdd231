@@ -1,0 +1,31 @@
+:root {
+    --font-main: 'Roboto', sans-serif;
+
+    /* Modo Claro (Por defecto) */
+    --primary: #0066CC;
+    --secondary: #10B981;
+    --background: #F8FAFC;
+    --surface: #FFFFFF; /* Para tarjetas o contenedores */
+    --text: #0F172A;
+    --text-muted: #64748B; /* Para textos secundarios */
+}
+
+:root.darkmode {
+    /* Modo Oscuro */
+    --primary: #3B82F6;
+    --secondary: #34D399;
+    --background: #0F172A; 
+    --surface: #1E293B;
+    --text: #F8FAFC;
+    --text-muted: #94A3B8;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+a {
+    color: var(--primary);
+}

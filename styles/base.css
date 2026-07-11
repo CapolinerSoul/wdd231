@@ -19,6 +19,7 @@
 --incomplete-border: #9ca3af;
 --incomplete-text: #1f2937;
 }
+
 header{
     background-color: var(--ink-black);
     color: #ffffff;

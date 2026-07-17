@@ -451,7 +451,7 @@ footer{
   padding: 24px 200px;
   border-radius: 12px;
   transition: all 0.2s ease;
-  font-size: xx-large;
+  font-size: large;
 }
 
 .calltoaction a:hover{

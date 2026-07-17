@@ -91,6 +91,20 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    
+}
+
+.calltoaction a {
+  display: block;
+  color: var(--surface);
+
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+
+  padding: 24px 200px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  font-size: xx-large;
 }
 
 }

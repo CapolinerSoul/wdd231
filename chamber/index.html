@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/featured.js" defer></script>
     <script src="scripts/darkmode.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
 </head>
 <body>
     <header>
@@ -35,8 +36,39 @@
         </nav>
     </header>
     <main>
-        <h1>Welcome</h1>
+        <div class="hero-container">
+        <img class="hero" src="images/godoycruzplaza.webp" alt="banner godoy cruz">
+        <div class="hero-content">
+        <h1>Welcome to Godoy Cruz</h1>
+        <p>Discover the business in here!</p>
+        </div>
+        </div>
+        <div id="mainpage-grid">
+         <div class="weather">
+            <h2>Clima Actual</h2>
+            
+            <figure id="composition">
+                <h2>Godoy Cruz</h2>
+                <img id="weather-icon" src="" alt="">
+                <figcaption id="weather-caption"></figcaption>
+                <span id="current-temp"></span>
+            </figure>
+        </div>
 
+        <div class="spotlight">
+            <h2>Featured</h2>
+            <div id="featuredContainer" class="grid-view">
+        </div>
+
+        </div>   
+        <div class="calltoaction">
+            <p>Are you interested to be part of the deparment?</p>
+            <p>Ready to embark in new business?</p>
+            <p>In that case:</p>
+            <a href="join.html">Join Us!</a>
+        </div>
+        
+        </div>
     </main>
     <footer>
         <div class="infofooter">

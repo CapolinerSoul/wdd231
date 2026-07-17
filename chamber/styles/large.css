@@ -41,7 +41,56 @@
 .socialmediafooter{
     display: flex;
     align-items: center;
+    gap: 0.3rem;
     justify-content: space-around;
 }
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Ocupa el 60% de la altura de la pantalla */
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.hero-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Capa negra con 40% de opacidad */
+  z-index: 1;
+}
+
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se deforme o estire */
+  object-position: center; /* Centra la foto de la plaza */
+  z-index: 0;
+}
+
+#mainpage-grid{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-row: auto;
+}
+
+#featuredContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+}

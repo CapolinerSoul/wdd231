@@ -34,7 +34,7 @@ header span{
 
 header{
     background-color: var(--primary);
-    color: var(--text);
+    color: var(--surface);
     margin: 1rem;
     display: flex;
     justify-content: space-around;
@@ -45,7 +45,7 @@ header{
 }
 
 a {
-    color: var(--text);
+    color: var(--surface);
     text-decoration: none;
     display: block;
     transition: all 0.2s ease;
@@ -61,6 +61,7 @@ a:hover{
 
 .active{
     background-color: var(--background);
+    color: var(--text);
 }
 
 ul {
@@ -326,7 +327,7 @@ h1{
 footer{
    display: flex;
     background-color: var(--primary);
-    color: var(--text);
+    color: var(--surface);
     flex-direction: column;
     gap: 40px;   
     justify-content: center;

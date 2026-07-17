@@ -11,7 +11,6 @@ if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
   rootElement.classList.remove('darkmode');
 }
 
-
 darkModeBtn.addEventListener('click', () => {
   rootElement.classList.toggle('darkmode');
   

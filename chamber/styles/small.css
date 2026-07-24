@@ -486,9 +486,6 @@ footer{
   font-size: x-large;
 }
 
-/* ==========================================
-   PÁGINA JOIN (ESTILOS COMPATIBLES)
-   ========================================== */
 .join-grid {
     display: flex;
     flex-direction: column;
@@ -561,7 +558,6 @@ input[type="submit"]:hover {
     filter: brightness(0.9);
 }
 
-/* Tarjetas Informativas */
 .membership-cards {
     display: flex;
     flex-direction: column;
@@ -572,7 +568,6 @@ input[type="submit"]:hover {
     margin: 0 0 10px 0;
 }
 
-/* Animación inicial sin Hover */
 .membership-card {
     background-color: var(--surface);
     padding: 20px;
@@ -612,63 +607,94 @@ input[type="submit"]:hover {
     font-size: 1rem;
 }
 
-/* ==========================================
-   ESTILOS DE MODALES (ACCESIBILIDAD NATIVA)
-   ========================================== */
-dialog {
+body dialog {
     border: 1px solid var(--text-muted);
     border-radius: 8px;
     padding: 24px;
     max-width: 500px;
     width: 90%;
-    /* Utiliza tus variables dinámicas de color */
     background-color: var(--surface);
     color: var(--text);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+        opacity 0.4s ease, 
+        transform 0.4s ease, 
+        display 0.4s ease allow-discrete, 
+        overlay 0.4s ease allow-discrete;
 }
 
-/* Oscurece el fondo de la página de forma semitransparente al abrir el modal */
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
+body dialog[open] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 
+        opacity 0.4s ease, 
+        transform 0.4s ease, 
+        display 0.4s ease allow-discrete, 
+        overlay 0.4s ease allow-discrete;
+}
+
+@starting-style {
+    body dialog[open] {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+body dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    transition: 
+        background-color 0.4s ease, 
+        backdrop-filter 0.4s ease, 
+        display 0.4s ease allow-discrete;
+}
+
+body dialog[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
 }
 
-dialog h2 {
+@starting-style {
+    body dialog[open]::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+body dialog h2 {
     font-family: var(--font-main);
     margin: 0 0 12px 0;
     font-size: 1.5rem;
 }
 
-dialog p {
+body dialog p {
     margin: 0 0 20px 0;
     color: var(--text-muted);
     font-size: 1rem;
 }
 
-/* Lista de Beneficios (Perks) */
-dialog ul {
+body dialog ul {
     list-style: none;
     padding: 0;
     margin: 0 0 24px 0;
-    background-color: transparent; /* Remueve cualquier herencia de fondo */
+    background-color: transparent;
 }
 
-/* Divide cada perk con una línea horizontal */
-dialog li {
+body dialog li {
     padding: 12px 0;
     border-bottom: 1px solid var(--text-muted);
     text-align: left;
     font-size: 0.95rem;
 }
 
-/* Quita la línea divisoria del último elemento para que quede limpio */
-dialog li:last-child {
+body dialog li:last-child {
     border-bottom: none;
 }
 
-/* Botón de cierre */
-dialog button.close-modal {
-    background-color: rgb(136, 38, 38); /* Color rojo de alerta estándar */
+body dialog button.close-modal {
+    background-color: rgb(136, 38, 38);
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -678,19 +704,18 @@ dialog button.close-modal {
     cursor: pointer;
     transition: filter 0.2s ease;
     display: block;
-    margin-left: auto; /* Empuja el botón hacia la esquina inferior derecha */
+    margin-left: auto;
 }
 
-dialog button.close-modal:hover {
+body dialog button.close-modal:hover {
     filter: brightness(0.85);
 }
-
 
 .thankyou-box {
     max-width: 700px;
     margin: 40px auto;
-    background-color: var(--surface); /* Cambia con Dark Mode */
-    color: var(--text);               /* Cambia con Dark Mode */
+    background-color: var(--surface); 
+    color: var(--text);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);

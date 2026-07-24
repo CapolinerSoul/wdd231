@@ -668,7 +668,7 @@ dialog li:last-child {
 
 /* Botón de cierre */
 dialog button.close-modal {
-    background-color: #ef4444; /* Color rojo de alerta estándar */
+    background-color: rgb(136, 38, 38); /* Color rojo de alerta estándar */
     color: #ffffff;
     border: none;
     padding: 10px 20px;

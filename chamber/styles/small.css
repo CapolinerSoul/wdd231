@@ -485,3 +485,242 @@ footer{
   color: var(--surface);
   font-size: x-large;
 }
+
+/* ==========================================
+   PÁGINA JOIN (ESTILOS COMPATIBLES)
+   ========================================== */
+.join-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: var(--surface);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border, #cbd5e1);
+}
+
+form h1 {
+    margin: 0 0 20px 0;
+    font-size: x-large;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+label span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+select, 
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border, #cbd5e1);
+    background-color: var(--surface);
+    color: var(--text);
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--primary);
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--surface);
+    border: none;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    filter: brightness(0.9);
+}
+
+/* Tarjetas Informativas */
+.membership-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.membership-cards h2 {
+    margin: 0 0 10px 0;
+}
+
+/* Animación inicial sin Hover */
+.membership-card {
+    background-color: var(--surface);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid var(--primary);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardLoadIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tiempos desfasados para la animación inicial */
+.membership-card:nth-child(2) { animation-delay: 0.1s; border-left-color: var(--text-muted, #64748b); }
+.membership-card:nth-child(3) { animation-delay: 0.2s; border-left-color: #bdc3c7; } /* Plata */
+.membership-card:nth-child(4) { animation-delay: 0.3s; border-left-color: #bdc3c7; } /* Plata */
+.membership-card:nth-child(5) { animation-delay: 0.4s; border-left-color: #f1c40f; } /* Oro */
+
+@keyframes cardLoadIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.membership-card h3 {
+    margin: 0 0 8px 0;
+}
+
+.membership-card button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    text-decoration: underline;
+    padding: 0;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ==========================================
+   ESTILOS DE MODALES (ACCESIBILIDAD NATIVA)
+   ========================================== */
+dialog {
+    border: 1px solid var(--text-muted);
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    /* Utiliza tus variables dinámicas de color */
+    background-color: var(--surface);
+    color: var(--text);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Oscurece el fondo de la página de forma semitransparente al abrir el modal */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+dialog h2 {
+    font-family: var(--font-main);
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+}
+
+dialog p {
+    margin: 0 0 20px 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Lista de Beneficios (Perks) */
+dialog ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    background-color: transparent; /* Remueve cualquier herencia de fondo */
+}
+
+/* Divide cada perk con una línea horizontal */
+dialog li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--text-muted);
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* Quita la línea divisoria del último elemento para que quede limpio */
+dialog li:last-child {
+    border-bottom: none;
+}
+
+/* Botón de cierre */
+dialog button.close-modal {
+    background-color: #ef4444; /* Color rojo de alerta estándar */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    display: block;
+    margin-left: auto; /* Empuja el botón hacia la esquina inferior derecha */
+}
+
+dialog button.close-modal:hover {
+    filter: brightness(0.85);
+}
+
+
+.thankyou-box {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: var(--surface); /* Cambia con Dark Mode */
+    color: var(--text);               /* Cambia con Dark Mode */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.thankyou-box h1 {
+    color: var(--primary);
+    margin-top: 0;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--text-muted, #cbd5e1);
+}
+.summary-label {
+    font-weight: 700;
+    color: var(--text);
+    opacity: 0.8;
+}
+.summary-value {
+    color: var(--text);
+}
+.return-btn {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: var(--primary);
+    color: var(--surface);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+

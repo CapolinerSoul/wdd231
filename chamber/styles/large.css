@@ -107,4 +107,46 @@
   font-size: xx-large;
 }
 
+.join-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Formulario a la izquierda (3 partes), Tarjetas a la derecha (2 partes) */
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start; /* Mantiene ambos bloques alineados arriba */
+}
+
+/* Ajuste del botón enviar para mantener la estética limpia en pantallas grandes */
+form input[type="submit"] {
+    width: auto;
+    padding: 14px 40px;
+}
+
+/* Usamos selectores combinados para ganarle a las reglas globales de nav */
+body dialog ul {
+    display: block;
+    flex-direction: unset;
+    gap: unset;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    background-color: transparent;
+}
+
+body dialog li {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--text-muted);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+}
+
+body dialog li:last-child {
+    border-bottom: none;
+}
+
 }

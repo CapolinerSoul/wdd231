@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Received - Commerce Chamber Wonderful PlaceHolder</title>
+    <meta name="description" content="Thank you for submitting your chamber of commerce application.">
+    <meta name="author" content="Franco Sanchez">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Archivo+Black&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lato:wght@400;700;900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/nav.js" defer></script>
+    <script src="scripts/darkmode.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+</head>
+<body>
+    <header>
+        <div class="mainheader">
+            <img src="images/hotelnotagain.svg" alt="">
+            <span>Chamber Wonderful PlaceHolder</span>
+            <button type="button" id="dark"><img src="images/modebt.svg" alt="mode button"></button>
+            <button type="button" id="hambutton"></button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="thankyou-container">
+            <div class="thankyou-box">
+                <h1>Application Submitted!</h1>
+                <p>Thank you for submitting your application to join the Chamber of Commerce. We appreciate your interest in advancing local corporate capabilities.</p>
+                
+                <div class="summary-wrapper">
+                    <h2 class="summary-title">Your Submitted Details:</h2>
+                    
+                    <div class="summary-row">
+                        <span class="summary-label">Full Name:</span>
+                        <span id="field-name" class="summary-value">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Email Address:</span>
+                        <span id="field-email" class="summary-value">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Mobile Number:</span>
+                        <span id="field-mobile" class="summary-value">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Organization Name:</span>
+                        <span id="field-org" class="summary-value">--</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Submission Timestamp:</span>
+                        <span id="field-time" class="summary-value">--</span>
+                    </div>
+                </div>
+
+                <a href="index.html" class="return-btn">Return to Homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="infofooter">
+            <p>Placeholder's Chamber of commerce</p>
+            <p>calle falsa 123</p>
+            <p>john.doe@whatareyoulookingat.org</p>
+            <p>+11111</p>
+        </div>
+        <div class="socialmediafooter">
+            <a href="youtube.com"><img src="images/youtube.svg" alt="youtube"></a>
+            <a href="twitter.com"><img src="images/twitter.svg" alt="twitter"></a>
+            <a href="linkedin.com"><img src="images/linkedin.svg" alt="linked in"></a>
+        </div>
+        <div class="infofooter">
+            <p>WDD231 Class Project</p>
+            <p>Franco Sanchez - Argentina</p>
+            <p>©<span id="currentyear"></span> Placeholder's Chamber of commerce</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

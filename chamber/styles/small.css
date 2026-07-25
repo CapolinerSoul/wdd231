@@ -376,12 +376,12 @@ footer{
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Evita que la imagen se deforme o estire */
-  object-position: center; /* Centra la foto de la plaza */
+  object-fit: cover;
+  object-position: center;
   z-index: 0;
+  background-color: black;
 }
 
-/* Contenido de texto sobre el banner */
 .hero-content {
   position: relative;
   z-index: 2;

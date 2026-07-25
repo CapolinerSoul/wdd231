@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetModal = document.getElementById(modalId);
             if (targetModal) {
                 targetModal.showModal();
+                // Time for transition. AI used for assistance to solve that.
+                setTimeout(() => {
+                    targetModal.classList.add('modal-visible');
+                }, 10);
             }
         });
     });
@@ -20,7 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const openModal = button.closest('dialog');
             if (openModal) {
-                openModal.close();
+                openModal.classList.remove('modal-visible');
+                //  Time for transition. AI used for assistance to solve that.
+                setTimeout(() => {
+                    openModal.close();
+                }, 400);
             }
         });
     });

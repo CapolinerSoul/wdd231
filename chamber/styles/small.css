@@ -618,49 +618,23 @@ body dialog {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transform: translateY(30px);
-    transition: 
-        opacity 0.4s ease, 
-        transform 0.4s ease, 
-        display 0.4s ease allow-discrete, 
-        overlay 0.4s ease allow-discrete;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-body dialog[open] {
+body dialog.modal-visible {
     opacity: 1;
     transform: translateY(0);
-    transition: 
-        opacity 0.4s ease, 
-        transform 0.4s ease, 
-        display 0.4s ease allow-discrete, 
-        overlay 0.4s ease allow-discrete;
-}
-
-@starting-style {
-    body dialog[open] {
-        opacity: 0;
-        transform: translateY(30px);
-    }
 }
 
 body dialog::backdrop {
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(0px);
-    transition: 
-        background-color 0.4s ease, 
-        backdrop-filter 0.4s ease, 
-        display 0.4s ease allow-discrete;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-body dialog[open]::backdrop {
+body dialog.modal-visible::backdrop {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(2px);
-}
-
-@starting-style {
-    body dialog[open]::backdrop {
-        background-color: rgba(0, 0, 0, 0);
-        backdrop-filter: blur(0px);
-    }
 }
 
 body dialog h2 {

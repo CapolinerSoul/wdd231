@@ -16,12 +16,10 @@ header img{
     transition: background-color 0.2s ease;
 }
 
-/* Efecto hover utilizando el color de fondo dinámico */
 #dark:hover {
     background-color: var(--background);
 }
 
-/* Inversión automática del icono SVG si es de color negro original */
 .darkmode #dark img, .darkmode .mainheader img, .darkmode .socialmediafooter a img {
     filter: invert(1) brightness(2);
 }
@@ -152,7 +150,6 @@ h1{
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Enlaces globales dentro de las tarjetas */
 .member-card a {
   color: var(--primary);
   text-decoration: none;
@@ -197,7 +194,7 @@ h1{
   height: auto;
   margin-bottom: 16px;
   border-radius: 8px;
-  background-color: #ffffff; /* Fondo blanco interno para logos transparentes */
+  background-color: #ffffff;
   padding: 6px;
 }
 
@@ -223,7 +220,7 @@ h1{
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 16px 0;
-  flex-grow: 1; /* Empuja el badge y el link al fondo uniformemente */
+  flex-grow: 1;
 }
 
 
@@ -282,12 +279,9 @@ h1{
 }
 
 .list-view .member-card .description {
-  display: none; /* Se oculta la descripción larga en vista de lista compacta */
+  display: none;
 }
 
-/* ==========================================
-   BADGES DE MEMBRESÍA (Alineación con Paleta)
-   ========================================== */
 .badge {
   display: inline-block;
   padding: 4px 10px;
@@ -345,11 +339,10 @@ footer{
     width: 50px;
 }
 
-/* Contenedor principal del Banner */
 .hero-container {
   position: relative;
   width: 100%;
-  height: 20vh; /* Ocupa el 60% de la altura de la pantalla */
+  height: 20vh;
   min-height: 200px;
   overflow: hidden;
   display: flex;
@@ -357,7 +350,6 @@ footer{
   justify-content: center;
 }
 
-/* Oscurece la imagen para que el texto resalte */
 .hero-container::after {
   content: '';
   position: absolute;
@@ -365,11 +357,10 @@ footer{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Capa negra con 40% de opacidad */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
-/* Estilos específicos para tu imagen */
 .hero {
   position: absolute;
   top: 0;
@@ -722,4 +713,3 @@ body dialog button.close-modal:hover {
     border-radius: 6px;
     font-weight: 700;
 }
-

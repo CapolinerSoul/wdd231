@@ -8,6 +8,12 @@
     --surface: #FFFFFF; /* Para tarjetas o contenedores */
     --text: #0F172A;
     --text-muted: #64748B; /* Para textos secundarios */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 4px 6px -1px rgba(0,0,0,.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1);
 }
 
 :root.darkmode {

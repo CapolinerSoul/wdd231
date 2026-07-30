@@ -1,0 +1,49 @@
+@media (min-width:641px) {
+     #hambutton {
+        display: none;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Permite que la navegación baje si no hay espacio */
+    flex-wrap: wrap; 
+    /* Agrega separación vertical cuando el nav baje */
+    row-gap: 15px; 
+}
+
+nav {
+    display: flex;
+    position: static;
+    width: auto;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+}
+
+li {
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+}
+
+a {
+    display: inline;
+}
+
+  .grid-container {
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "benegas    alfonsin"
+      "plaza      teatro"
+      "arizu      barraquero"
+      "palmares   mediateca";
+  }
+
+}

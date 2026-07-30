@@ -1,4 +1,4 @@
-@media (min-width:700px) {
+@media (min-width:1025px) {
         #hambutton {
         display: none;
     }
@@ -148,5 +148,13 @@ body dialog li {
 body dialog li:last-child {
     border-bottom: none;
 }
+
+.grid-container {
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "benegas    alfonsin   plaza       teatro"
+      "arizu      barraquero palmares    mediateca";
+  }
 
 }

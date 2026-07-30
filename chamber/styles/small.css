@@ -713,3 +713,14 @@ body dialog button.close-modal:hover {
     border-radius: 6px;
     font-weight: 700;
 }
+
+.grid-container {
+    gap: 16px;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box; 
+    grid-template-areas:
+      "benegas" "alfonsin" "plaza" "teatro"
+      "arizu" "barraquero" "palmares" "mediateca";
+  }

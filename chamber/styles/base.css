@@ -25,3 +25,107 @@
     --text: #F8FAFC;
     --text-muted: #94A3B8;
 }
+
+.grid-container {
+  display: grid;
+  padding: 1.5rem;
+  background-color: var(--background);
+  transition: background-color 0.3s ease;
+}
+
+.card {
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-main);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 1.25rem;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.card figure {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.card figure img {
+  width: 100%;
+  max-width: 300px; 
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card address {
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+
+.card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.card button {
+  font-family: var(--font-main);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.card button:hover {
+  background-color: var(--secondary); /* Cambia al color secundario al pasar el mouse */
+}
+
+.card button:active {
+  transform: scale(0.97);
+}
+
+.benegas    { grid-area: benegas; }
+.alfonsin   { grid-area: alfonsin; }
+.plaza      { grid-area: plaza; }
+.teatro-plaza { grid-area: teatro; }
+.arizu      { grid-area: arizu; }
+.barraquero { grid-area: barraquero; }
+.palmares   { grid-area: palmares; }
+.mediateca  { grid-area: mediateca; }

@@ -9,7 +9,7 @@ itemsDeInteres.forEach(item => {
   card.innerHTML = `
     <h2>${item.nombre}</h2>
     <figure>
-      <img src="${item.imagen}" alt="${item.nombre}" width="300" height="200">
+      <img src="${item.imagen}" alt="${item.nombre}" width="300" height="200" loading="lazy">
     </figure>
     <address>${item.direccion}</address>
     <p>${item.descripcion}</p>

@@ -18,15 +18,13 @@ async function getMembers() {
   }
 }
 
-// 2. Función para renderizar las tarjetas/filas
 function displayMembers(members) {
-  container.innerHTML = ""; // Limpiar contenedor
+  container.innerHTML = "";
 
   members.forEach(member => {
     const card = document.createElement('section');
     card.classList.add('member-card');
     
-    // Convertir nivel de membresía numérico a texto legible
     let levelText = "Miembro";
     if (member.membership_level === 2) levelText = "Plata (Silver)";
     if (member.membership_level === 3) levelText = "Oro (Gold)";
@@ -44,7 +42,6 @@ function displayMembers(members) {
   });
 }
 
-// 3. Eventos para cambiar de vista (Toggle Grid/List)
 gridBtn.addEventListener('click', () => {
   container.classList.add('grid-view');
   container.classList.remove('list-view');

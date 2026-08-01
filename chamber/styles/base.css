@@ -34,19 +34,17 @@
 }
 
 .card {
-  background-color: var(--surface);
-  color: var(--text);
-  font-family: var(--font-main);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: 1.25rem;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.75rem;
-  
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--surface);
+    color: var(--text);
+    font-family: var(--font-main);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -60,23 +58,6 @@
   font-weight: 700;
   margin: 0;
   color: var(--text);
-}
-
-.card figure {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-}
-
-.card figure img {
-  width: 100%;
-  max-width: 300px; 
-  height: 200px;
-  object-fit: cover;
-  display: block;
 }
 
 .card address {
@@ -121,6 +102,21 @@
   transform: scale(0.97);
 }
 
+.visit-message-box {
+    font-family: var(--font-main);
+    background-color: var(--surface);
+    color: var(--primary);
+    font-weight: 600;
+    padding: 1rem;
+    margin: 1rem 1.5rem;
+    border-left: 5px solid var(--secondary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .benegas    { grid-area: benegas; }
 .alfonsin   { grid-area: alfonsin; }
 .plaza      { grid-area: plaza; }
@@ -129,3 +125,4 @@
 .barraquero { grid-area: barraquero; }
 .palmares   { grid-area: palmares; }
 .mediateca  { grid-area: mediateca; }
+

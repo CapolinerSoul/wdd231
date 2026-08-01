@@ -715,12 +715,32 @@ body dialog button.close-modal:hover {
 }
 
 .grid-container {
+    display: grid;
     gap: 16px;
-    grid-template-columns: 1fr;
     padding: 1rem;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     box-sizing: border-box; 
+    grid-template-columns: 1fr;
     grid-template-areas:
       "benegas" "alfonsin" "plaza" "teatro"
       "arizu" "barraquero" "palmares" "mediateca";
-  }
+}
+
+  .card figure {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background-color: #000;
+    aspect-ratio: 3 / 2; 
+}
+
+.card figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+}

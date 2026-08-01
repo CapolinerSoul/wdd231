@@ -4,7 +4,7 @@ const container = document.getElementById('cards-container');
 
 itemsDeInteres.forEach(item => {
   const card = document.createElement('article');
-  card.className = `card ${item.id}`; // Se asigna una clase única para asociarlo a las grid-areas
+  card.className = `card ${item.id}`;
 
   card.innerHTML = `
     <h2>${item.nombre}</h2>

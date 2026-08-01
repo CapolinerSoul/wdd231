@@ -26,13 +26,6 @@
     --text-muted: #94A3B8;
 }
 
-.grid-container {
-  display: grid;
-  padding: 1.5rem;
-  background-color: var(--background);
-  transition: background-color 0.3s ease;
-}
-
 .card {
     background-color: var(--surface);
     color: var(--text);

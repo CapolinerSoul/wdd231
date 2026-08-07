@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapolinerSoul's Art Portfolio</title>
+    <meta name="description" content="Capoliner Soul's Art Portfolio for showing off and getting commissions">
+    <meta name="author" content="Franco Sanchez">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/formbeh.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">CapolinerSoul Art Portfolio</h1>
+            <button class="hamburger-btn" id="hamburgerBtn">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-btn" aria-current="page">Main</a></li>
+                    <li><a href="gallery.html" class="nav-btn">Gallery</a></li>
+                    <li><a href="commision.html" class="nav-btn active">Commission me</a></li>
+                    <li><a href="" class="nav-btn">Youtube</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+     <section>
+            <h2>Commission Request</h2>
+            <form id="commissionForm" action="action.html" method="GET">
+                
+                <!-- Username / Alias -->
+                <div class="form-group">
+                    <label for="username">Username / Alias:</label>
+                    <input type="text" id="username" name="username" required placeholder="Your handle">
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+
+                <!-- Company Name (Optional) -->
+                <div class="form-group">
+                    <label for="company">Company Name (Optional):</label>
+                    <input type="text" id="company" name="company" placeholder="Business entities only">
+                </div>
+
+                <div class="form-group">
+                        <button type="button" id="openSpecsBtn" class="info-modal-btn">
+                        ℹ️ View Tier Descriptions & Samples
+                        </button>
+                <!-- Commission Type -->
+                <div class="form-group">
+                    <label for="commission_type">Commission Type:</label>
+                    <select id="commission_type" name="commission_type" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Sketch ($5)">Sketch - $5</option>
+                        <option value="Full Drawing ($30)">Full Drawing - $30</option>
+                        <option value="Model Commission ($60)">Model Commission - $60</option>
+                    </select>
+                </div>
+
+                <!-- Additional Characters (Optional) -->
+                <div class="form-group">
+                    <label for="additional_characters">Number of Additional Characters (Optional):</label>
+                    <input type="number" id="additional_characters" name="additional_characters" min="0" placeholder="0">
+                </div>
+
+                <!-- Complex Background (Optional) -->
+                <div class="form-group-inline">
+                    <input type="checkbox" id="complex_background" name="complex_background" value="Yes">
+                    <label for="complex_background">Include Complex Background</label>
+                </div>
+
+                <!-- NSFW Art/Model (Optional) -->
+                <div class="form-group-inline">
+                    <input type="checkbox" id="nsfw" name="nsfw" value="Yes">
+                    <label for="nsfw">NSFW Art / Model Content</label>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="description">Solicitation Description:</label>
+                    <textarea id="description" name="description" rows="6" required placeholder="Describe your character, references, and scene ideas here..."></textarea>
+                </div>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </section>
+
+        
+</div>
+
+    <dialog id="tierSpecsModal" class="accessible-modal">
+        <div class="modal-header">
+            <h2>Commission Tiers Detailed</h2>
+            <button type="button" id="closeSpecsBtn" class="close-modal-btn" aria-label="Close dialog">✕</button>
+        </div>
+        
+        <div id="modalBody" class="modal-body">
+            <p style="color: var(--text-muted);">Loading tier details...</p>
+        </div>
+    </dialog>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CapolinerSoul Studio. Created by Franco Sanchez. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

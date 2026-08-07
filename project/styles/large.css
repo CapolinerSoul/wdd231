@@ -1,0 +1,87 @@
+@media (min-width: 768px) {
+    .header-container {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: auto;
+        padding: 0;  
+        margin: 0;    
+        list-style: none;
+    }
+
+    .nav-btn {
+        display: inline-block;
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    /* Ocultar botón hamburguesa de celular de forma definitiva */
+    .hamburger-btn {
+        display: none;
+    }
+
+    /* Grid expands to exactly 3 drawings wide */
+    .drawings-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+     .summary-container {
+            margin-top: 15px;
+        }
+        .summary-item {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .summary-item strong {
+            display: inline-block;
+            width: 180px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas iguales */
+        gap: 30px;
+    }
+
+    /* --- REBORN SECTION (Ocupa las 3 columnas de ancho) --- */
+    .reborn {
+        grid-column: 1 / -1; /* Se estira de punta a punta del grid */
+        flex-direction: row; /* Foto a la izquierda, texto a la derecha */
+        align-items: flex-start;
+        text-align: left;
+        gap: 35px;
+    }
+
+    #profile {
+        width: 180px;
+        height: 180px;
+        flex-shrink: 0; /* Evita que la foto se deforme o achique */
+    }
+
+    .reborn div {
+        flex: 1;
+    }
+
+    /* --- TRIPLE SECTION (1 columna cada uno de forma automática) --- */
+    .triple {
+        grid-column: span 1; /* Cada sección de video toma una de las 3 columnas */
+    }
+
+    .triple iframe {
+        width: 100%; /* Se adapta perfectamente al ancho de su columna del grid */
+    }
+
+}

@@ -19,19 +19,10 @@ body {
     padding: 20px;
 }
 
-
 header {
     border-bottom: 2px solid var(--accent-color);
     padding-bottom: 15px;
     margin-bottom: 30px;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
 }
 
 .site-title {
@@ -40,16 +31,62 @@ header {
     margin: 0;
 }
 
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* --- COMPONENTE BOTÓN HAMBURGUESA (MÓVIL) --- */
+.header-container {
+    position: relative;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-btn .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Ocultar el menú de navegación por defecto en pantallas chicas */
+.main-nav {
+    display: none;
+    width: 100%;
+}
+
+/* Clase inyectada por JS al hacer click */
+.main-nav.open {
+    display: block;
+}
+
+.main-nav.open ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style: none;
+}
+
+
 .nav-btn {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
     font-family: var(--heading-font);
     background-color: var(--panel-bg);
     color: var(--text-main);
@@ -61,13 +98,11 @@ header {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-
 .nav-btn.active {
     background-color: var(--accent-color);
     color: var(--primary-bg);
     border: 1px solid var(--text-main);
 }
-
 
 .nav-btn:not(.active):hover {
     background-color: var(--accent-color);
@@ -95,7 +130,6 @@ main li {
     margin-bottom: 10px;
 }
 
-/* --- SITE PLAN COLOR BLOCKS --- */
 .color-box {
     display: inline-block;
     width: 30px;
@@ -110,7 +144,6 @@ main li {
 .coral-bg { background-color: #ff5e62; }
 .white-bg { background-color: #f5f5f5; }
 
-/* --- FOOTER --- */
 footer {
     text-align: center;
     font-family: var(--heading-font);
@@ -119,19 +152,294 @@ footer {
     font-size: 0.9em;
 }
 
-/* --- ACCESSIBLE RESPONSIVENESS --- */
-@media (max-width: 600px) {
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .main-nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-    .nav-btn {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
+/* --- GRID BASE (1 COLUMN FOR MOBILEVIEW) --- */
+.drawings-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.drawing-card {
+    margin: 0;
+    background-color: var(--panel-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drawing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(255, 94, 98, 0.15);
+    border-color: var(--accent-color);
+}
+
+.drawing-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid var(--primary-bg);
+}
+
+.drawing-card figcaption {
+    padding: 18px;
+}
+
+.drawing-card h3 {
+    margin: 0 0 8px 0;
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    color: var(--text-main);
+}
+
+.drawing-card time {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group-inline {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--heading-font);
+    color: var(--text-main);
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.form-group-inline label {
+    display: inline;
+    margin-bottom: 0;
+    font-family: var(--heading-font);
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-color);
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    font-family: var(--heading-font);
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* --- ACTION PAGE RESULTS STYLES --- */
+#action-page {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--panel-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 6px;
+}
+
+#action-page h2 {
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--body-font);
+}
+
+.summary-item strong {
+    font-family: var(--heading-font);
+    color: var(--accent-color);
+    display: inline-block;
+    width: 160px;
+}
+/* --- CONTAINER & GENERAL LAYOUT --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* --- REBORN SECTION (PROFILE & BIO) --- */
+.reborn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+.triple {
+    display: block; /* Cambiar flex por block simplifica el cálculo de ancho en celulares */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.triple iframe {
+    display: block;
+    width: 100% !important; /* Destruye el width="560" de tu HTML */
+    max-width: 100%;
+    height: auto; 
+    aspect-ratio: 16 / 9;   /* Calcula la altura perfecta basándose solo en el ancho actual */
+    margin: 0 auto;
+}
+.triple p {
+    margin-top: 10px;
+    font-family: var(--heading-font);
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.wireframe{
+    width: 100%;
+}
+
+/* --- ACCESSIBLE MODAL STYLES --- */
+.info-modal-btn {
+    font-family: var(--heading-font);
+    background-color: var(--panel-bg);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.info-modal-btn:hover {
+    background-color: rgba(255, 94, 98, 0.1);
+}
+
+/* El contenedor nativo del Dialog */
+.accessible-modal {
+    background-color: var(--panel-bg);
+    color: var(--text-main);
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Animación y color de la capa de fondo oscuro */
+.accessible-modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s ease;
+}
+
+.close-modal-btn:hover {
+    color: var(--accent-color);
+}
+
+.tier-spec {
+    margin-bottom: 20px;
+}
+
+.tier-spec h3 {
+    margin-bottom: 6px;
+}
+
+.tier-spec p {
+    font-family: var(--body-font);
+    font-size: 0.95rem;
+    margin: 0;
+    color: var(--text-main);
+    line-height: 1.5;
 }

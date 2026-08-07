@@ -1,0 +1,17 @@
+[
+    {
+        "id": "sketch",
+        "title": "Sketch ($5)",
+        "description": "A clean digital lineart sketch of your character. Includes solid background color. Perfect for quick concepts or profile icons. No complex rendering or shading included."
+    },
+    {
+        "id": "full_drawing",
+        "title": "Full Drawing ($30)",
+        "description": "Completely polished illustration. Includes full clean lineart, cell-shading, detailed lighting effects, and transparent or simple geometric background elements."
+    },
+    {
+        "id": "model",
+        "title": "Model Commission ($60)",
+        "description": "Art ready for rigging. High-resolution full body illustration separated into distinct layers (eyes, hair tufts, limbs, torso) organized in a PSD file. Designed specifically for VTuber or animation use."
+    }
+]

@@ -29,6 +29,7 @@ header {
     font-family: var(--heading-font);
     color: var(--accent-color);
     margin: 0;
+    font-size: xx-large;
 }
 
 .header-container {

@@ -31,7 +31,6 @@ header {
     margin: 0;
 }
 
-/* --- COMPONENTE BOTÓN HAMBURGUESA (MÓVIL) --- */
 .header-container {
     position: relative;
     display: flex;
@@ -61,13 +60,11 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Ocultar el menú de navegación por defecto en pantallas chicas */
 .main-nav {
     display: none;
     width: 100%;
 }
 
-/* Clase inyectada por JS al hacer click */
 .main-nav.open {
     display: block;
 }
@@ -310,7 +307,7 @@ button[type="submit"]:hover {
     display: inline-block;
     width: 160px;
 }
-/* --- CONTAINER & GENERAL LAYOUT --- */
+
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -321,7 +318,6 @@ button[type="submit"]:hover {
     box-sizing: border-box;
 }
 
-/* --- REBORN SECTION (PROFILE & BIO) --- */
 .reborn {
     display: flex;
     flex-direction: column;
@@ -339,17 +335,17 @@ button[type="submit"]:hover {
 }
 
 .triple {
-    display: block; /* Cambiar flex por block simplifica el cálculo de ancho en celulares */
+    display: block;
     width: 100%;
     box-sizing: border-box;
 }
 
 .triple iframe {
     display: block;
-    width: 100% !important; /* Destruye el width="560" de tu HTML */
+    width: 100%;
     max-width: 100%;
     height: auto; 
-    aspect-ratio: 16 / 9;   /* Calcula la altura perfecta basándose solo en el ancho actual */
+    aspect-ratio: 16 / 9;
     margin: 0 auto;
 }
 .triple p {
@@ -363,7 +359,6 @@ button[type="submit"]:hover {
     width: 100%;
 }
 
-/* --- ACCESSIBLE MODAL STYLES --- */
 .info-modal-btn {
     font-family: var(--heading-font);
     background-color: var(--panel-bg);
@@ -381,7 +376,6 @@ button[type="submit"]:hover {
     background-color: rgba(255, 94, 98, 0.1);
 }
 
-/* El contenedor nativo del Dialog */
 .accessible-modal {
     background-color: var(--panel-bg);
     color: var(--text-main);
@@ -394,7 +388,6 @@ button[type="submit"]:hover {
     box-sizing: border-box;
 }
 
-/* Animación y color de la capa de fondo oscuro */
 .accessible-modal::backdrop {
     background-color: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);

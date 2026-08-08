@@ -27,7 +27,6 @@
         box-sizing: border-box;
     }
 
-    /* Ocultar botón hamburguesa de celular de forma definitiva */
     .hamburger-btn {
         display: none;
     }
@@ -52,14 +51,14 @@
             letter-spacing: 0.5px;
         }
         .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas iguales */
+        grid-template-columns: repeat(3, 1fr);
         gap: 30px;
     }
 
     /* --- REBORN SECTION (Ocupa las 3 columnas de ancho) --- */
     .reborn {
-        grid-column: 1 / -1; /* Se estira de punta a punta del grid */
-        flex-direction: row; /* Foto a la izquierda, texto a la derecha */
+        grid-column: 1 / -1;
+        flex-direction: row;
         align-items: flex-start;
         text-align: left;
         gap: 35px;
@@ -68,20 +67,19 @@
     #profile {
         width: 180px;
         height: 180px;
-        flex-shrink: 0; /* Evita que la foto se deforme o achique */
+        flex-shrink: 0;
     }
 
     .reborn div {
         flex: 1;
     }
 
-    /* --- TRIPLE SECTION (1 columna cada uno de forma automática) --- */
     .triple {
-        grid-column: span 1; /* Cada sección de video toma una de las 3 columnas */
+        grid-column: span 1;
     }
 
     .triple iframe {
-        width: 100%; /* Se adapta perfectamente al ancho de su columna del grid */
+        width: 100%;
     }
 
 }

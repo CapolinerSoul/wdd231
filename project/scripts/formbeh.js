@@ -103,3 +103,73 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('commissionForm');
+    
+    if (!form) return;
+
+    const formFields = [
+        'username',
+        'email',
+        'company',
+        'commission_type',
+        'additional_characters',
+        'complex_background',
+        'nsfw',
+        'description'
+    ];
+
+    function loadSavedFormData() {
+        const savedData = localStorage.getItem('capoliner_commission_draft');
+        
+        if (!savedData) return;
+
+        try {
+            const data = JSON.parse(savedData);
+            
+            formFields.forEach(fieldId => {
+                const element = document.getElementById(fieldId);
+                if (!element) return;
+
+                if (element.type === 'checkbox') {
+                    // Para los checkboxes (NSFW y Fondo), evalúa el booleano verdadero/falso
+                    element.checked = !!data[fieldId];
+                } else {
+                    // Para textos, números y selectores dropdown
+                    if (data[fieldId] !== undefined) {
+                        element.value = data[fieldId];
+                    }
+                }
+            });
+            console.log('Draft successfully restored from Local Storage.');
+        } catch (error) {
+            console.error('Error parsing saved local storage data:', error);
+        }
+    }
+
+    function saveFormData() {
+        const dataToSave = {};
+        
+        formFields.forEach(fieldId => {
+            const element = document.getElementById(fieldId);
+            if (!element) return;
+
+            if (element.type === 'checkbox') {
+                dataToSave[fieldId] = element.checked;
+            } else {
+                dataToSave[fieldId] = element.value;
+            }
+        });
+
+        localStorage.setItem('capoliner_commission_draft', JSON.stringify(dataToSave));
+    }
+
+    loadSavedFormData();
+
+    form.addEventListener('input', saveFormData);
+
+    form.addEventListener('submit', () => {
+        localStorage.removeItem('capoliner_commission_draft');
+    });
+});

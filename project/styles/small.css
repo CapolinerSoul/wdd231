@@ -7,7 +7,7 @@
     --text-muted: #b3b3b3;       /* Muted grey for footer text */
     
     --heading-font: 'Helvetica Neue', Arial, sans-serif;
-    --body-font: 'Georgia', serif;
+    --body-font: 'Georgia', 'Nunito', serif;
 }
 
 body {

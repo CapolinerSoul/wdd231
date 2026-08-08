@@ -1,45 +1,4 @@
-  document.getElementById('commissionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            let output = '';
-            
-            const keysMapping = {
-                'username': 'USERNAME / ALIAS',
-                'email': 'EMAIL ADDRESS',
-                'company': 'COMPANY NAME',
-                'commission_type': 'COMMISSION TYPE',
-                'additional_characters': 'ADDITIONAL CHARACTERS',
-                'complex_background': 'COMPLEX BACKGROUND',
-                'nsfw': 'NSFW REQUEST',
-                'description': 'DESCRIPTION'
-            };
-
-            formData.forEach((value, key) => {
-                if (value.trim() !== '') {
-                    output += `<div class="summary-item"><strong>${keysMapping[key]}:</strong> ${value}</div>`;
-                }
-            });
-
-            if (!formData.has('company') || formData.get('company').trim() === '') {
-                output += `<div class="summary-item"><strong>COMPANY NAME:</strong> N/A</div>`;
-            }
-            if (!formData.has('additional_characters') || formData.get('additional_characters') === '') {
-                output += `<div class="summary-item"><strong>ADDITIONAL CHARACTERS:</strong> 0</div>`;
-            }
-            if (!formData.has('complex_background')) {
-                output += `<div class="summary-item"><strong>COMPLEX BACKGROUND:</strong> No</div>`;
-            }
-            if (!formData.has('nsfw')) {
-                output += `<div class="summary-item"><strong>NSFW REQUEST:</strong> No</div>`;
-            }
-
-            document.getElementById('summary-content').innerHTML = output;
-            document.getElementById('action-page').style.display = 'block';
-            
-            document.getElementById('action-page').scrollIntoView({ behavior: 'smooth' });
-        });
-
+// --- 1. SCRIPT DE INTERACCIÓN DEL MODAL (FETCH DEL JSON) ---
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('tierSpecsModal');
     const openBtn = document.getElementById('openSpecsBtn');
@@ -47,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modalBody');
 
     let isDataLoaded = false;
+
+    // Si el modal no existe en esta página (ej: en action.html), frena el script
+    if (!modal || !openBtn) return;
 
     async function loadTierData() {
         try {
@@ -57,10 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             const tiers = await response.json();
-            
             modalBody.innerHTML = '';
 
-            // Construimos e inyectamos el HTML dinámicamente para cada objeto del JSON
             tiers.forEach(tier => {
                 const tierElement = document.createElement('div');
                 tierElement.classList.add('tier-spec');
@@ -78,10 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     openBtn.addEventListener('click', async () => {
         modal.showModal();
-        
         if (!isDataLoaded) {
             await loadTierData();
         }
@@ -104,9 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+// --- 2. SCRIPT DE LOCAL STORAGE Y ENVÍO DEL FORMULARIO ---
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('commissionForm');
     
+    // Si el formulario no existe en la página actual, frena el script
     if (!form) return;
 
     const formFields = [
@@ -122,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function loadSavedFormData() {
         const savedData = localStorage.getItem('capoliner_commission_draft');
-        
         if (!savedData) return;
 
         try {
@@ -133,10 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!element) return;
 
                 if (element.type === 'checkbox') {
-                    // Para los checkboxes (NSFW y Fondo), evalúa el booleano verdadero/falso
                     element.checked = !!data[fieldId];
                 } else {
-                    // Para textos, números y selectores dropdown
                     if (data[fieldId] !== undefined) {
                         element.value = data[fieldId];
                     }
@@ -165,10 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('capoliner_commission_draft', JSON.stringify(dataToSave));
     }
 
+    // Inicializa la carga del borrador y el guardado en tiempo real
     loadSavedFormData();
-
     form.addEventListener('input', saveFormData);
 
+    // CONTROL DE ENVÍO REPARADO: 
+    // No usamos e.preventDefault() para permitir que viaje de verdad a action.html
     form.addEventListener('submit', () => {
         localStorage.removeItem('capoliner_commission_draft');
     });
